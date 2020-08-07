@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #cal1{resize: none;text-align: right;width: 400px;height: 50px;color:green;background-color: silver;font-size: 40px;letter-spacing: 1px;}
+        .cal{display: flex;justify-content: center;align-items: center;margin-top: 100px;}
+        button{width: 98px;height: 35px;margin: 1px;}
+        .de{background-color: red; box-shadow: 5px 5px 5px black;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="cal">
+        <div class="de">
+    <textarea name="" id="cal1" cols="30" rows="1"></textarea></br>
+    <button onclick="clearAll()">C</button>
+    <button>**</button>
+    <button>%</button>
+    <button>/</button><br>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>*</button><br>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>-</button><br>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>+</button><br>
+    <button>0</button>
+    <button>.</button>
+    <button onclick="back()">DEL</button>
+    <button onclick="equal()">=</button><br>
+</div>
+            
+
+        
+    </div>
+   <script>
+       for (i=1; i<18; i++) {document.querySelectorAll("button")[i].addEventListener("click",x);
+                                function x(params) {var digit=this.innerHTML;
+                                document.querySelector("textarea").innerHTML=document.querySelector("textarea").innerHTML+digit;
+                                    }}
+                            
+                            function equal() {var digit = document.querySelector("textarea").innerHTML;
+                                            document.querySelector("textarea").innerHTML=eval(digit);
+                                
+                            }
+                            function clearAll() {document.querySelector("textarea").innerHTML="";
+                                
+                            }
+                            function back() {var digit = document.querySelector("textarea").innerHTML;
+                                            document.querySelector("textarea").innerHTML=digit.substring(0,digit.length-1);
+                                
+                            }
+   </script> 
+</body>
+</html>
